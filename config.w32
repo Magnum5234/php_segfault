@@ -1,0 +1,7 @@
+ARG_ENABLE('segfault', 'segfault support', 'no');
+
+if (PHP_SEGFAULT != 'no') {
+	AC_DEFINE('HAVE_SEGFAULT', 1, 'segfault support enabled');
+
+	EXTENSION('segfault', 'segfault.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
